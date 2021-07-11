@@ -1,5 +1,10 @@
 var astitwo,astitwo_img,astitwo2;
-var bg2
+var bg2;
+var PLAY = 1;
+var END = 0;
+var gameState = PLAY;
+
+
 var ratha,ratha_img
 var mock,mock1
 function preload(){
@@ -15,8 +20,8 @@ function setup() {
   astitwo=createSprite(windowWidth/2,windowHeight/2,10,10)
   astitwo.addImage(astitwo_img)
   astitwo.scale=0.1
-  astitwo.velocityX=2
-   astitwo.velocityY=-2
+  astitwo.velocityX=5
+   astitwo.velocityY=-5
   astitwo.scale=0.20
   
   
@@ -26,10 +31,10 @@ function setup() {
 function draw() {
   background(ratha_img);
   astitwo.bounceOff(edges)
-  if(frameCount<100){
+  if(frameCount<200){
     astitwo.visible=true
   }else{
-    background(bg2);
+    background(astitwo2)
     astitwo.visible=false
  //   strokeWeight(8)
  //   fill("white")
